@@ -1,0 +1,18 @@
+server:
+  port: 8069
+spring:
+  application:
+    name: tft-webflux-ws
+  websocket:
+    ##登陆超时时间
+    login-interval: 15
+    ##ping超时时间
+    ping-interval: 15
+rocketmq: #05 对应配置MQ测试环境/生产环境信息
+  name-server: 88.88.16.171:9876;88.88.16.172:9876
+  producer:
+    group: rocketmq-group-ws
+logging:
+  level:
+    com.tft: debug
+    com.alibaba: warn
