@@ -30,8 +30,8 @@ public class WebSocketConfig {
 
     @Bean
     public HandlerMapping handlerMapping(WebFluxWebSocketHandler webFluxWebSocketHandler) {
-        Map<String, WebSocketHandler> map = new HashMap<>();
-        map.put( "/ws", webFluxWebSocketHandler );
+        Map<String, WebSocketHandler> map = new HashMap<>(1);
+        map.put( "/websocket", webFluxWebSocketHandler );
         SimpleUrlHandlerMapping mapping = new SimpleUrlHandlerMapping();
         mapping.setUrlMap( map );
         mapping.setOrder( Ordered.HIGHEST_PRECEDENCE );
